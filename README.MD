@@ -85,7 +85,7 @@ GET /analyze/pharmaceuticals?api_key=test123
 
 ## 🚦 Rate Limiting
 
-* Max **3 requests per minute per API key**
+* Max **5 requests per minute per API key**
 * Exceeding limit returns:
 
 ```json
@@ -106,6 +106,71 @@ GET /analyze/pharmaceuticals?api_key=test123
 
 ---
 
+## 🔧 Setup Instructions
+
+### 1. Clone Repo
+
+```bash
+git clone <your-repo-url>
+cd trade-opportunities-api
+```
+
+---
+
+### 2. Create Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+---
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Setup Environment Variables
+
+Create `.env` file:
+
+```env
+AZURE_OPENAI_API_KEY=your_key
+AZURE_OPENAI_ENDPOINT=https://your-endpoint.openai.azure.com/
+AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+AZURE_OPENAI_API_VERSION=2024-02-15-preview
+```
+
+---
+
+### 5. Run Server
+
+```bash
+uvicorn app.main:app --reload
+```
+
+---
+
+### 6. Open API Docs
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## 🔑 API Keys (Demo)
+
+Use any of the following:
+
+* `test123`
+* `demo123`
+
+---
 
 ## ⚠️ Notes
 
@@ -113,6 +178,16 @@ GET /analyze/pharmaceuticals?api_key=test123
 * Sessions reset when server restarts
 * Designed for demonstration and assignment purposes
 
+---
+
+## 🎯 Future Improvements
+
+* JWT-based authentication
+* Database integration
+* Caching for faster responses
+* Advanced scraping for richer data
+
+---
 
 ## 👨‍💻 Author
 
